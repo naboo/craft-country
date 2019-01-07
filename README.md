@@ -21,21 +21,21 @@ This plugin requires Craft CMS 3.0.0 or later.
 
 ## Usage
 
-Install the plugin manually using composer.
+Install the plugin manually (locally) using composer.
 
 ```
-composer require naboo/craft-country
+composer require naboovalley/craft-country
 ```
 
 Once the plugin is installed you can start using its build in Twig tags to interact with country code and other related functions. Please see the [How It Works](#how-it-works) section.
 
 ## How It Works
 
-The plugin monitors various things, collecting data about your sites, users and interactions.
+### Field types
 
-### Fieldtypes
+There are two field types that work in a similar way. The first field type is a dropdown letting the user select one (1) country. 
 
-There are two field types that work in a similar way. The first field type is a dropdown letting the user select one (1) country. The second field type allows the user to select multiple countries using a list of checkboxes. The field type stores the selected country/countries country code(s) which are returned in Twig.
+The second field type allows the user to select multiple countries using a list of checkboxes. The field type stores the selected country/countries country code(s) which are returned in Twig.
 
 ### Twig
 
@@ -71,7 +71,7 @@ Returns country details by country code. The `code` parameter is required.
 
 #### Store country data in user session
 
-If you need to use the country information for your site visitors multiple times during the visit there are some functions for storing the data in the users session for repeated use (to save database queries). The first time any of these functions are used there's a call made to the `http://www.geoplugin.net/` service to determine the users location. *Note* this service is nowhere near perfect. The results may very. I've used it on production sites with good results over the years _but_ there are edge cases were it just doesn't work as expected. Use fallbacks...
+If you need to use the country information for your site visitors multiple times during the visit there are some functions for storing the data in the users session for repeated use (to save database queries). The first time any of these functions are used there's a call made to the `http://www.geoplugin.net/` service to determine the users location. *Note* this service is nowhere near perfect. The results may vary. I've used it on production sites with good results over the years _but_ there are edge cases were it just doesn't work as expected. Use fallbacks...
 
 ```twig
 {% set userCountry = craft.country.getUserCountry() %}
