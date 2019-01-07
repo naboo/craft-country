@@ -1,0 +1,8 @@
+<div id="{{ name }}">
+	{% for country in craft.country.getAllCountries %}
+		<div class="field checkboxfield">
+			<input id="checkbox-{{ country.isoAlpha2 }}" class="checkbox" type="checkbox" name="{{ name }}[]" value="{{ country.isoAlpha2 }}" {% if country.isoAlpha2 in value %}checked{% endif %}></input>
+			<label for="checkbox-{{ country.isoAlpha2 }}">{{ country.name }}</label>
+		</div>
+	{% endfor %}
+</div>

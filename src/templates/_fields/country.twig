@@ -1,0 +1,8 @@
+<div class="select">
+	<select id="{{ name }}" name="{{ name }}">
+		<option value=""></option>
+		{% for country in craft.country.getAllCountries %}
+		<option value="{{ country.isoAlpha2 }}" {% if country.isoAlpha2 == value %}selected{% endif %}>{{ country.name }}</option>
+		{% endfor %}
+	</select>
+</div>
