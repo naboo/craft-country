@@ -43,9 +43,9 @@ class Country_MultipleCountries extends Field implements PreviewableFieldInterfa
      */
     public function rules()
     {
-        /*$rules = parent::rules();
-        $rules[] = [[$this->handle], 'safe'];
-        return $rules;*/
+        $rules = parent::rules();
+        /*$rules[] = [[$this->handle], 'safe'];*/
+        return $rules;
     }
 
     /**

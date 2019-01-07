@@ -43,9 +43,9 @@ class Country_Countries extends Field implements PreviewableFieldInterface
      */
     public function rules()
     {
-        /*$rules = parent::rules();
-        $rules[] = [[$this->handle], 'safe'];
-        return $rules;*/
+        $rules = parent::rules();
+        /*$rules[] = [[$this->handle], 'safe'];*/
+        return $rules;
     }
 
     /**
